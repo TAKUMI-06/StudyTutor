@@ -1,253 +1,237 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StudyTutor｜学びをつなぐ</title>
+  <meta name="description" content="StudyTutorのビジョン・サービス・メンバー・お問い合わせ。中高生とOB/OG・専門家をつなぐ学習サポート。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0e0f12;          /* 暗めの背景 */
+      --panel:#151821;       /* パネル */
+      --muted:#8c93a4;       /* サブテキスト */
+      --text:#e8ebf2;        /* 文字色 */
+      --brand:#4aa8ff;       /* ブランド色 */
+      --accent:#7cf0c6;      /* アクセント */
+      --border:rgba(255,255,255,.08);
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0; font-family:"Noto Sans JP", system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color:var(--text); background:linear-gradient(180deg, #0b0c10 0%, #0e1016 70%, #0b0c10 100%);}
+
+    /* Header */
+    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(160%) blur(8px); background:rgba(14,16,20,.7); border-bottom:1px solid var(--border)}
+    .container{max-width:1100px; margin:0 auto; padding:0 20px}
+    .nav{display:flex; align-items:center; justify-content:space-between; height:64px}
+    .brand{display:flex; gap:10px; align-items:center; font-weight:700}
+    .logo{width:28px; height:28px; border-radius:8px; background:linear-gradient(135deg, var(--brand), var(--accent)); box-shadow:0 6px 18px rgba(74,168,255,.35)}
+    nav ul{display:flex; gap:18px; list-style:none; padding:0; margin:0}
+    nav a{color:var(--text); text-decoration:none; opacity:.9}
+    nav a:hover{opacity:1; color:var(--brand)}
+
+    /* Hero */
+    .hero{padding:96px 0 48px;}
+    .grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:28px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:28px; box-shadow:var(--shadow)}
+    .badge{display:inline-block; background:rgba(74,168,255,.15); color:var(--brand); border:1px solid rgba(74,168,255,.35); padding:6px 10px; border-radius:999px; font-size:12px; letter-spacing:.08em}
+    h1{font-size:40px; line-height:1.2; margin:14px 0 12px}
+    p.lead{color:var(--muted); font-size:15.5px}
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .btn{appearance:none; border:none; border-radius:12px; padding:12px 16px; font-weight:600; cursor:pointer; color:#0b1118; background:linear-gradient(135deg, var(--brand), #89c8ff)}
+    .btn.secondary{background:#232838; color:var(--text); border:1px solid var(--border)}
+
+    /* Sections */
+    section{padding:24px 0}
+    section h2{font-size:26px; margin:6px 0 16px}
+    .cols{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    @media (max-width:900px){.cols{grid-template-columns:1fr}}
+    .kicker{font-size:12px; letter-spacing:.1em; color:var(--muted); text-transform:uppercase}
+
+    /* Accordion / details */
+    details{background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:16px 18px; box-shadow:var(--shadow)}
+    details + details{margin-top:12px}
+    summary{cursor:pointer; font-weight:600}
+    summary::-webkit-details-marker{display:none}
+
+    /* Footer */
+    footer{border-top:1px solid var(--border); padding:26px 0; color:var(--muted)}
+
+    /* Small helpers */
+    .sub{color:var(--muted)}
+    .pill{display:inline-block; font-size:12px; padding:4px 8px; border-radius:999px; border:1px solid var(--border); color:var(--muted)}
+    .list{display:grid; gap:10px; padding:0; margin:0; list-style:none}
+    .creditGrid{display:grid; grid-template-columns:repeat(2,1fr); gap:10px}
+    @media (max-width:720px){.creditGrid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="ja"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="utf-8" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;StudyTutor｜学びをつなぐ&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="description" content="StudyTutorのビジョン・サービス・メンバー・お問い合わせ。中高生とOB/OG・専門家をつなぐ学習サポート。" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>:root{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--bg:#0e0f12;<span class="Apple-converted-space">          </span>/* 暗めの背景 */</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--panel:#151821; <span class="Apple-converted-space">      </span>/* パネル */</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--muted:#8c93a4; <span class="Apple-converted-space">      </span>/* サブテキスト */</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--text:#e8ebf2;<span class="Apple-converted-space">        </span>/* 文字色 */</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--brand:#4aa8ff; <span class="Apple-converted-space">      </span>/* ブランド色 */</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--accent:#7cf0c6;<span class="Apple-converted-space">      </span>/* アクセント */</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--border:rgba(255,255,255,.08);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--radius:18px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--shadow:0 10px 30px rgba(0,0,0,.25);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>*{box-sizing:border-box}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>html,body{margin:0; font-family:"Noto Sans JP", system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color:var(--text); background:linear-gradient(180deg, #0b0c10 0%, #0e1016 70%, #0b0c10 100%);}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Header */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(160%) blur(8px); background:rgba(14,16,20,.7); border-bottom:1px solid var(--border)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.container{max-width:1100px; margin:0 auto; padding:0 20px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.nav{display:flex; align-items:center; justify-content:space-between; height:64px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.brand{display:flex; gap:10px; align-items:center; font-weight:700}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.logo{width:28px; height:28px; border-radius:8px; background:linear-gradient(135deg, var(--brand), var(--accent)); box-shadow:0 6px 18px rgba(74,168,255,.35)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>nav ul{display:flex; gap:18px; list-style:none; padding:0; margin:0}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>nav a{color:var(--text); text-decoration:none; opacity:.9}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>nav a:hover{opacity:1; color:var(--brand)}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Hero */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.hero{padding:96px 0 48px;}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:28px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width:900px){.grid{grid-template-columns:1fr}}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.card{background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:28px; box-shadow:var(--shadow)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.badge{display:inline-block; background:rgba(74,168,255,.15); color:var(--brand); border:1px solid rgba(74,168,255,.35); padding:6px 10px; border-radius:999px; font-size:12px; letter-spacing:.08em}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>h1{font-size:40px; line-height:1.2; margin:14px 0 12px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>p.lead{color:var(--muted); font-size:15.5px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.btn{appearance:none; border:none; border-radius:12px; padding:12px 16px; font-weight:600; cursor:pointer; color:#0b1118; background:linear-gradient(135deg, var(--brand), #89c8ff)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.btn.secondary{background:#232838; color:var(--text); border:1px solid var(--border)}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Sections */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>section{padding:24px 0}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>section h2{font-size:26px; margin:6px 0 16px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cols{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width:900px){.cols{grid-template-columns:1fr}}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.kicker{font-size:12px; letter-spacing:.1em; color:var(--muted); text-transform:uppercase}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Accordion / details */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>details{background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:16px 18px; box-shadow:var(--shadow)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>details + details{margin-top:12px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>summary{cursor:pointer; font-weight:600}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>summary::-webkit-details-marker{display:none}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Footer */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>footer{border-top:1px solid var(--border); padding:26px 0; color:var(--muted)}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Small helpers */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.sub{color:var(--muted)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.pill{display:inline-block; font-size:12px; padding:4px 8px; border-radius:999px; border:1px solid var(--border); color:var(--muted)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.list{display:grid; gap:10px; padding:0; margin:0; list-style:none}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.creditGrid{display:grid; grid-template-columns:repeat(2,1fr); gap:10px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width:720px){.creditGrid{grid-template-columns:1fr}}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container nav"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="brand"&gt;&lt;span class="logo" aria-hidden="true"&gt;&lt;/span&gt; StudyTutor&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;nav aria-label="メインナビゲーション"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="#home"&gt;ホーム&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="#services"&gt;サービス概要&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="#about"&gt;私たちについて&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="#contact"&gt;問い合わせ&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/nav&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;main class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Hero / Home --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="home" class="hero"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="badge"&gt;ホーム&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h1&gt;ビジョン・目的&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="lead"&gt;中高生とOB/OG・専門家をつなぎ、&lt;strong&gt;学びの最短距離&lt;/strong&gt;を共につくる。StudyTutorは、信頼できる先輩から進路・勉強・キャリアの実践知を学べるコミュニティ型の学習支援です。&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="ctaRow"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a class="btn" href="#services"&gt;サービスを見る&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a class="btn secondary" href="#contact"&gt;まずは相談&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2 class="kicker"&gt;ホーム&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2&gt;サービス概要（ダイジェスト）&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul class="list sub"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;✓ 予約：30分のオンライン相談から（初回トライアル想定）&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;✓ 質問票：事前ヒアリングで当日の解像度UP&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;✓ 支払い方法：オンライン決済／振込（設計予定）&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;✓ メンバー：医療系・研究系のOB/OGを中心に拡大中&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div style="margin-top:12px" class="creditGrid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="pill"&gt;運営メンバー&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="pill"&gt;クレジット&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Services --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="services"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card" style="margin-bottom:16px"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="badge"&gt;サービス概要&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;予約の方法&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;ol class="sub"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;① カレンダーから空き枠を選択（公開予定）&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;② 簡単な質問票に入力&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;③ 決済完了で予約確定（自動メール送付）&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ol&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cols"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;質問票&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="sub"&gt;相談テーマ／現在地／志望校・将来像／いま困っていること等。テンプレはNotion/Google Formsで実装予定。&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;支払い方法&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="sub"&gt;ベータ：初回 &lt;strong&gt;30分 1,200円&lt;/strong&gt;、2回目以降 &lt;strong&gt;3,000円 / 60分&lt;/strong&gt;（案）。オンライン決済 or 振込に対応予定。&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;講師へ&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="sub"&gt;担当ガイドライン・守秘義務・フィードバック様式・スケジュール管理の基本方針。&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cols" style="margin-top:16px"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;生徒へ&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="sub"&gt;相談準備チェックリスト、当日の流れ、終了後アンケート、継続相談の案内。&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;運営メンバー&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul class="list sub"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;守安 巧（医学部・神経科学）&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;他、OB/OGメンター募集中&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;クレジット&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="sub"&gt;協力：学校関係者・メンターの皆さま／ツール：GitHub Pages, Forms 等&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- About --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="about"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card" style="margin-bottom:16px"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="badge"&gt;私たちについて&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;活動理念&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="sub"&gt;「実体験の知」を社会に循環させ、進路の非対称性を減らす。寄り添い・中立・再現性を重視します。&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cols"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;課題意識&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="sub"&gt;情報格差／相談先の不在／ロールモデル不足。地域差や家庭の事情に左右されにくい仕組みを目指します。&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;運営メンバー&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="sub"&gt;コア運営の紹介・役割分担・募集要項などを掲載予定。&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;安全・品質&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="sub"&gt;個人情報保護／同意・記録方針／行動規範（Code of Conduct）を公開予定。&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Contact --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="contact"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="badge"&gt;問い合わせ&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2&gt;問い合わせフォーム&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;form class="sub" method="POST" action="mailto:contact@example.com" enctype="text/plain"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;label&gt;お名前&lt;br /&gt;&lt;input name="name" required style="width:100%; margin:6px 0 12px; padding:12px; border-radius:10px; border:1px solid var(--border); background:#0f1220; color:var(--text)"&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;label&gt;メールアドレス&lt;br /&gt;&lt;input name="email" type="email" required style="width:100%; margin:6px 0 12px; padding:12px; border-radius:10px; border:1px solid var(--border); background:#0f1220; color:var(--text)"&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;label&gt;ご用件&lt;br /&gt;&lt;textarea name="message" rows="6" required style="width:100%; margin:6px 0 12px; padding:12px; border-radius:10px; border:1px solid var(--border); background:#0f1220; color:var(--text)"&gt;&lt;/textarea&gt;&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="btn" type="submit"&gt;送信（暫定：メール起動）&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/form&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="sub" style="margin-top:10px"&gt;※ 将来的にはFormspreeや自前のAPI等でサーバーレス送信に切り替え予定。&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2&gt;よくある質問&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;details&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;summary&gt;録画（記録）は可能ですか？&lt;/summary&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="sub"&gt;合意がある場合のみ可能。用途は品質向上／記録に限定し、第三者共有は行いません。&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/details&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;details&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;summary&gt;料金と支払い方法は？&lt;/summary&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="sub"&gt;ベータ価格を上記「支払い方法」に記載。オンライン決済（準備中）／銀行振込のいずれか。&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/details&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;details&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;summary&gt;対象は誰ですか？&lt;/summary&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="sub"&gt;主に中高生・保護者・学校関係者。大学生の進路相談も応相談。&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/details&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="sub" style="margin-top:12px"&gt;メール：&lt;a href="mailto:contact@example.com" style="color:var(--brand)"&gt;contact@example.com&lt;/a&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/main&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;small&gt;© &lt;span id="y"&gt;&lt;/span&gt; StudyTutor. All rights reserved.&lt;/small&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>// 年号</p>
-<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("y").textContent = new Date().getFullYear()</p>
-<p class="p1"><span class="Apple-converted-space">    </span>// スムーズスクロール（同一ページの#リンク用）</p>
-<p class="p1"><span class="Apple-converted-space">    </span>document.querySelectorAll('a[href^="#"]').forEach(a=&gt;{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>a.addEventListener('click', e=&gt;{</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const id = a.getAttribute('href').slice(1)</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const el = document.getElementById(id)</p>
-<p class="p1"><span class="Apple-converted-space">        </span>if(el){ e.preventDefault(); window.scrollTo({top: el.offsetTop-70, behavior:'smooth'}) }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>})</p>
-<p class="p1"><span class="Apple-converted-space">    </span>})</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="logo" aria-hidden="true"></span> StudyTutor</div>
+      <nav aria-label="メインナビゲーション">
+        <ul>
+          <li><a href="#home">ホーム</a></li>
+          <li><a href="#services">サービス概要</a></li>
+          <li><a href="#about">私たちについて</a></li>
+          <li><a href="#contact">問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero / Home -->
+    <section id="home" class="hero">
+      <div class="grid">
+        <div class="card">
+          <span class="badge">ホーム</span>
+          <h1>ビジョン・目的</h1>
+          <p class="lead">中高生とOB/OG・専門家をつなぎ、<strong>学びの最短距離</strong>を共につくる。StudyTutorは、信頼できる先輩から進路・勉強・キャリアの実践知を学べるコミュニティ型の学習支援です。</p>
+          <div class="ctaRow">
+            <a class="btn" href="#services">サービスを見る</a>
+            <a class="btn secondary" href="#contact">まずは相談</a>
+          </div>
+        </div>
+        <div class="card">
+          <h2 class="kicker">ホーム</h2>
+          <h2>サービス概要（ダイジェスト）</h2>
+          <ul class="list sub">
+            <li>✓ 予約：30分のオンライン相談から（初回トライアル想定）</li>
+            <li>✓ 質問票：事前ヒアリングで当日の解像度UP</li>
+            <li>✓ 支払い方法：オンライン決済／振込（設計予定）</li>
+            <li>✓ メンバー：医療系・研究系のOB/OGを中心に拡大中</li>
+          </ul>
+          <div style="margin-top:12px" class="creditGrid">
+            <div class="pill">運営メンバー</div>
+            <div class="pill">クレジット</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <div class="card" style="margin-bottom:16px">
+        <span class="badge">サービス概要</span>
+        <h2>予約の方法</h2>
+        <ol class="sub">
+          <li>① カレンダーから空き枠を選択（公開予定）</li>
+          <li>② 簡単な質問票に入力</li>
+          <li>③ 決済完了で予約確定（自動メール送付）</li>
+        </ol>
+      </div>
+      <div class="cols">
+        <div class="card">
+          <h3>質問票</h3>
+          <p class="sub">相談テーマ／現在地／志望校・将来像／いま困っていること等。テンプレはNotion/Google Formsで実装予定。</p>
+        </div>
+        <div class="card">
+          <h3>支払い方法</h3>
+          <p class="sub">ベータ：初回 <strong>30分 1,200円</strong>、2回目以降 <strong>3,000円 / 60分</strong>（案）。オンライン決済 or 振込に対応予定。</p>
+        </div>
+        <div class="card">
+          <h3>講師へ</h3>
+          <p class="sub">担当ガイドライン・守秘義務・フィードバック様式・スケジュール管理の基本方針。</p>
+        </div>
+      </div>
+      <div class="cols" style="margin-top:16px">
+        <div class="card">
+          <h3>生徒へ</h3>
+          <p class="sub">相談準備チェックリスト、当日の流れ、終了後アンケート、継続相談の案内。</p>
+        </div>
+        <div class="card">
+          <h3>運営メンバー</h3>
+          <ul class="list sub">
+            <li>守安 巧（医学部・神経科学）</li>
+            <li>他、OB/OGメンター募集中</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>クレジット</h3>
+          <p class="sub">協力：学校関係者・メンターの皆さま／ツール：GitHub Pages, Forms 等</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="card" style="margin-bottom:16px">
+        <span class="badge">私たちについて</span>
+        <h2>活動理念</h2>
+        <p class="sub">「実体験の知」を社会に循環させ、進路の非対称性を減らす。寄り添い・中立・再現性を重視します。</p>
+      </div>
+      <div class="cols">
+        <div class="card">
+          <h3>課題意識</h3>
+          <p class="sub">情報格差／相談先の不在／ロールモデル不足。地域差や家庭の事情に左右されにくい仕組みを目指します。</p>
+        </div>
+        <div class="card">
+          <h3>運営メンバー</h3>
+          <p class="sub">コア運営の紹介・役割分担・募集要項などを掲載予定。</p>
+        </div>
+        <div class="card">
+          <h3>安全・品質</h3>
+          <p class="sub">個人情報保護／同意・記録方針／行動規範（Code of Conduct）を公開予定。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="grid">
+        <div class="card">
+          <span class="badge">問い合わせ</span>
+          <h2>問い合わせフォーム</h2>
+          <form class="sub" method="POST" action="mailto:contact@example.com" enctype="text/plain">
+            <label>お名前<br /><input name="name" required style="width:100%; margin:6px 0 12px; padding:12px; border-radius:10px; border:1px solid var(--border); background:#0f1220; color:var(--text)"></label>
+            <label>メールアドレス<br /><input name="email" type="email" required style="width:100%; margin:6px 0 12px; padding:12px; border-radius:10px; border:1px solid var(--border); background:#0f1220; color:var(--text)"></label>
+            <label>ご用件<br /><textarea name="message" rows="6" required style="width:100%; margin:6px 0 12px; padding:12px; border-radius:10px; border:1px solid var(--border); background:#0f1220; color:var(--text)"></textarea></label>
+            <button class="btn" type="submit">送信（暫定：メール起動）</button>
+          </form>
+          <p class="sub" style="margin-top:10px">※ 将来的にはFormspreeや自前のAPI等でサーバーレス送信に切り替え予定。</p>
+        </div>
+        <div class="card">
+          <h2>よくある質問</h2>
+          <details>
+            <summary>録画（記録）は可能ですか？</summary>
+            <p class="sub">合意がある場合のみ可能。用途は品質向上／記録に限定し、第三者共有は行いません。</p>
+          </details>
+          <details>
+            <summary>料金と支払い方法は？</summary>
+            <p class="sub">ベータ価格を上記「支払い方法」に記載。オンライン決済（準備中）／銀行振込のいずれか。</p>
+          </details>
+          <details>
+            <summary>対象は誰ですか？</summary>
+            <p class="sub">主に中高生・保護者・学校関係者。大学生の進路相談も応相談。</p>
+          </details>
+          <p class="sub" style="margin-top:12px">メール：<a href="mailto:contact@example.com" style="color:var(--brand)">contact@example.com</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>© <span id="y"></span> StudyTutor. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    // 年号
+    document.getElementById("y").textContent = new Date().getFullYear()
+    // スムーズスクロール（同一ページの#リンク用）
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1)
+        const el = document.getElementById(id)
+        if(el){ e.preventDefault(); window.scrollTo({top: el.offsetTop-70, behavior:'smooth'}) }
+      })
+    })
+  </script>
 </body>
 </html>
